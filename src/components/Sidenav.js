@@ -1,12 +1,16 @@
 import React from "react";
-import { CgProfile } from "react-icons/cg";
+import { BiUser } from "react-icons/bi";
+import { FiUsers } from "react-icons/fi";
+import { GiTakeMyMoney } from "react-icons/gi";
+import { MdDashboard, MdOutlineAccountBalanceWallet } from "react-icons/md";
+import { RiUserSearchLine } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 
 const Sidenav = () => {
   return (
     <div>
-      <div>
-        <h1 className="font-bold">
+      <div className="flex flex-col  gap-2 p-3 border-b border-slate-100">
+        <h1 className="font-bold mx-2">
           <span className="text-orange-500">
             {" "}
             <span className="text-2xl">S</span>OFT
@@ -16,7 +20,11 @@ const Sidenav = () => {
           </span>
         </h1>
         <div className="flex gap-2 items-center">
-          <CgProfile />
+          <div className="bg-slate-400 p-3 rounded-full">
+            {" "}
+            <BiUser />
+          </div>
+
           <div>
             <p>Hello ! Good Evening </p>
             <p>Admin</p>
@@ -32,29 +40,29 @@ const Sidenav = () => {
                 <span
                   className={
                     isActive
-                      ? " flex items-center gap-2 bg-slate-500  p-2"
-                      : "flex items-center gap-2 p-2"
+                      ? " flex items-center gap-2 bg-slate-500  p-3 text-white"
+                      : "flex items-center gap-2 p-3"
                   }
                 >
                   {" "}
-                  <CgProfile />
+                  <MdDashboard />
                   <p>Dashboard</p>
                 </span>
               )}
             </NavLink>
           </li>
           <li className="">
-            <NavLink to="/Leads">
+            <NavLink to="/leads">
               {({ isActive }) => (
                 <span
                   className={
                     isActive
-                      ? " flex items-center gap-2 bg-slate-500 p-2"
-                      : "flex items-center gap-2 p-2"
+                      ? " flex items-center gap-2 bg-slate-500 p-3 text-white"
+                      : "flex items-center gap-2 p-3"
                   }
                 >
                   {" "}
-                  <CgProfile />
+                  <RiUserSearchLine />
                   <p>Leads</p>
                 </span>
               )}
@@ -66,12 +74,12 @@ const Sidenav = () => {
                 <span
                   className={
                     isActive
-                      ? " flex items-center gap-2 bg-slate-500  p-2"
-                      : "flex items-center gap-2 p-2"
+                      ? " flex items-center gap-2 bg-slate-500  p-3 text-white"
+                      : "flex items-center gap-2 p-3"
                   }
                 >
                   {" "}
-                  <CgProfile />
+                  <FiUsers />
                   <p>Customer</p>
                 </span>
               )}
@@ -83,12 +91,12 @@ const Sidenav = () => {
                 <span
                   className={
                     isActive
-                      ? " flex items-center gap-2 bg-slate-500 p-2"
-                      : "flex items-center gap-2 p-2"
+                      ? " flex items-center gap-2 bg-slate-500 p-3 text-white"
+                      : "flex items-center gap-2 p-3"
                   }
                 >
                   {" "}
-                  <CgProfile />
+                  <GiTakeMyMoney />
                   <p>Sales</p>
                 </span>
               )}
@@ -100,12 +108,12 @@ const Sidenav = () => {
                 <span
                   className={
                     isActive
-                      ? " flex items-center gap-2 bg-slate-500 p-2"
-                      : "flex items-center gap-2 p-2"
+                      ? " flex items-center gap-2 bg-slate-500 p-3 text-white"
+                      : "flex items-center gap-2 p-3"
                   }
                 >
                   {" "}
-                  <CgProfile />
+                  <MdOutlineAccountBalanceWallet />
                   <p>Expense</p>
                 </span>
               )}
