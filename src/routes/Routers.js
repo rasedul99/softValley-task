@@ -3,8 +3,8 @@ import React from "react";
 const Routers = () => {
   return (
     <Routes>
-      <Route path="/dashborad" element={<Dashboard />} />
-      <Route path="s/leads" element={<Leads />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/leads" element={<Leads />} />
       <Route path="/customer" element={<Customer />} />
       <Route path="/sales" element={<Sales />} />
       <Route path="/expense" element={<Expense />} />

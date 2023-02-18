@@ -4,7 +4,9 @@ import Sidenav from "./components/Sidenav";
 function App() {
   return (
     <div>
-      <Sidenav/>
+      <div className="h-full w-1/4">
+        <Sidenav />
+      </div>
     </div>
   );
 }
