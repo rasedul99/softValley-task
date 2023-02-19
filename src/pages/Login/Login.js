@@ -1,53 +1,64 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const handleSubmit = () => {};
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios
+      .post("http://crm.softvalley.sveducrm.com/api/admin/login", {
+        // Data to be sent to the server
+        email: "admin@example.com",
+        password: "password",
+      })
+      .then((response) => {
+        const { token } = response.data.data;
+        localStorage.setItem("token", token);
+        console.log(token);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div>
-      <div
-        class="w-screen h-screen flex justify-center items-center
-    bg-white"
-      >
+      <div className="w-screen h-screen flex justify-center items-center bg-white">
         <form
-          class="p-10 bg-slate-100 bg-current rounded-xl drop-shadow-lg space-y-5"
-          action=""
+          className="p-10 bg-slate-100 bg-current rounded-xl drop-shadow-lg space-y-5 "
+          onSubmit={handleSubmit}
         >
-          <h1 class="text-center text-3xl">Soft Valley</h1>
-          <div class="flex flex-col space-y-2">
-            <label class="text-base font-light text-start" for="email">
-              Email
-            </label>
+          <h1 className="text-center text-3xl">Soft Valley</h1>
+          <div className="flex flex-col space-y-2">
+            <label className="text-base font-light text-start">Email</label>
             <input
-              class="w-96 px-3 py-2 rounded-md border border-slate-400"
+              className="w-96 px-3 py-2 rounded-md border border-slate-400"
               type="email"
               placeholder="Your Email"
-              name="email"
               id="email"
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div class="flex flex-col  space-y-2">
-            <label class="text-base font-light text-start" for="password">
-              Password
-            </label>
+          <div className="flex flex-col  space-y-2">
+            <label className="text-base font-light text-start">Password</label>
             <input
-              class="w-96 px-3 py-2 rounded-md border border-slate-400"
+              className="w-96 px-3 py-2 rounded-md border border-slate-400"
               type="password"
               placeholder="Your Password"
-              name="password"
               id="password"
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
           <div className="text-start">
-            <input type="checkbox" name="remember" id="remember" />
-            <label class="text-base font-light" for="remember">
-              Remember me
-            </label>
+            <input type="checkbox" name="remember" />
+            <label className="text-base font-light">Remember me</label>
           </div>
 
           <button
-            class="w-full px-10 py-2 bg-blue-600 text-white rounded-md
+            className="w-full px-10 py-2 bg-blue-600 text-white rounded-md
             hover:bg-blue-500 hover:drop-shadow-md duration-300 ease-in"
             type="submit"
           >
