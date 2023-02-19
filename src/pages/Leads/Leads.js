@@ -1,6 +1,7 @@
 import React from "react";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineFullscreen } from "react-icons/md";
+import AssignessDropdown from "../../components/AssignessDropdown";
 import SearchBar from "../../components/SearchBar";
 import SourcesDropdown from "../../components/SourcesDropdown";
 import StatusesDropdown from "../../components/StatusesDropdown";
@@ -22,8 +23,17 @@ const Leads = () => {
       <div className="bg-slate-100 p-2 my-2">
         <SearchBar />
       </div>
-      <StatusesDropdown />
-      <SourcesDropdown />
+      <div className="flex gap-2">
+        <StatusesDropdown />
+        <SourcesDropdown />
+        <AssignessDropdown />
+        <button className="bg-slate-500 text-white  px-10 rounded">
+          Filter
+        </button>
+        <button className="text-gray-400 px-6  rounded border">
+          Reset Filter
+        </button>
+      </div>
     </div>
   );
 };
