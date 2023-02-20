@@ -1,5 +1,7 @@
 import React from "react";
-
+import { AiFillDelete } from "react-icons/ai";
+import { MdEdit } from "react-icons/md";
+import { TfiLayoutListPost } from "react-icons/tfi";
 const LeadData = ({ leads }) => {
   console.log(leads);
   return (
@@ -10,8 +12,9 @@ const LeadData = ({ leads }) => {
             <table className="min-w-full">
               <thead className="bg-white border-b">
                 <tr>
-                  <th className="text-sm font-medium text-gray-900  py-4 text-left">
+                  <th className="text-sm  font-medium text-gray-900  py-4 text-left">
                     <input
+                      className="mx-3 my-2"
                       type="checkbox"
                       id="A3-yes"
                       name="A3-confirmation"
@@ -55,6 +58,7 @@ const LeadData = ({ leads }) => {
                   <tr className="border-b">
                     <td className="py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                       <input
+                        className="mx-3 my-2"
                         type="checkbox"
                         id="A3-yes"
                         name="A3-confirmation"
@@ -92,7 +96,11 @@ const LeadData = ({ leads }) => {
                       {lead.source.name}
                     </td>
                     <td className="text-sm text-gray-900 font-light  py-4 whitespace-nowrap">
-                      {lead.assigned}
+                      <div className="flex gap-3">
+                        <TfiLayoutListPost />
+                        <MdEdit />
+                        <AiFillDelete />
+                      </div>
                     </td>
                   </tr>
                 ))}

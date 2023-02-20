@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <div className="flex ">
-        <div className="h-full w-[15%]">
+        <div className="w-[15%]">
           <Sidenav />
         </div>
         <div className="w-[85%]">

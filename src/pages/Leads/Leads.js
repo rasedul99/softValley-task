@@ -56,9 +56,9 @@ const Leads = () => {
     getSource();
   };
   return (
-    <div className="mx-3">
+    <div className="">
       <div className="flex justify-between items-center">
-        <div>
+        <div className="mx-3">
           <p className="font-semibold">Leads</p>
           <p>Difficulties increase the nearer we get to the goal</p>
         </div>
@@ -67,10 +67,10 @@ const Leads = () => {
           <CgProfile size="20" />
         </div>
       </div>
-      <div className="bg-slate-100 p-2 my-2">
+      <div className="bg-slate-100 p-3 my-2">
         <SearchBar />
       </div>
-      <div className="flex gap-2 items-center relative">
+      <div className="flex gap-2 items-center relative mx-3">
         <StatusesDropdown
           selectedStatuses={selectedStatuses}
           setSelectedStatuses={setSelectedStatuses}

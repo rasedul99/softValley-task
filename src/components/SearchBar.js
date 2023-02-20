@@ -4,7 +4,7 @@ import { CiSearch } from "react-icons/ci";
 const SearchBar = () => {
   const [leads, setLeads] = useState("");
   return (
-    <div className="flex justify-between max-w-xs rounded   p-1  border border-slate-200">
+    <div className="flex justify-between items-center max-w-xs rounded   p-1  border border-slate-200">
       <input
         placeholder="Search in leads table...."
         className="outline-none bg-slate-100"

@@ -19,7 +19,7 @@ const Sidenav = () => {
     },
   ];
   return (
-    <div>
+    <div className="border-r h-screen">
       <div className="flex flex-col  gap-2 p-3 border-b border-slate-100 ">
         <h1 className="font-bold text-xl mx-2 italic">
           <span className="text-orange-500">
