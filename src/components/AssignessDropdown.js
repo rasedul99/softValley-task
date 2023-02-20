@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
 
-const AssignessDropdown = () => {
+const AssignessDropdown = ({ selectedassignes, setSelectedassignes }) => {
   const [assignes, setAssignes] = useState([]);
   const baseApi = "http://crm.softvalley.sveducrm.com/";
   useEffect(() => {
@@ -18,8 +18,6 @@ const AssignessDropdown = () => {
     }
     getAssigne();
   }, []);
-  const [selectedassignes, setSelectedassignes] = useState("Assignees");
-
   const handleChange = (event) => {
     setSelectedassignes(event.target.value);
   };

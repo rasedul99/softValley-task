@@ -42,7 +42,6 @@ const Sidenav = () => {
       <ul>
         {navItems.map((item) => {
           const { navTitle, path, Icon } = item;
-          console.log(Icon);
           return (
             <li key={navTitle}>
               <NavLink to={path}>

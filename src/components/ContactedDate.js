@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import DateModal from "./DateModal";
 
-const ContactedDate = () => {
+const ContactedDate = ({ date, setDate }) => {
   const [showModal, setShowModal] = useState(false);
-  console.log(showModal);
   return (
     <div>
       <div className=" flex rounded border border-gray-400 w-60 pl-2 pr-10 py-1">
@@ -18,7 +17,7 @@ const ContactedDate = () => {
       </div>
       {showModal ? (
         <div className="absolute right-0">
-          <DateModal />
+          <DateModal date={date} setDate={setDate} />
         </div>
       ) : null}
     </div>
