@@ -1,16 +1,16 @@
 import React from "react";
 
-
-const LeadData = () => {
+const LeadData = ({ leads }) => {
+  console.log(leads);
   return (
-    <div class="flex flex-col">
-      <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-        <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-          <div class="overflow-hidden">
-            <table class="min-w-full">
-              <thead class="bg-white border-b">
+    <div className="flex flex-col">
+      <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+          <div className="overflow-hidden">
+            <table className="min-w-full">
+              <thead className="bg-white border-b">
                 <tr>
-                  <th class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                  <th className="text-sm font-medium text-gray-900  py-4 text-left">
                     <input
                       type="checkbox"
                       id="A3-yes"
@@ -18,52 +18,84 @@ const LeadData = () => {
                       value="yes"
                     />
                   </th>
-                  <th class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                  <th className="text-sm font-medium text-gray-900  py-4 text-left">
                     Lead Name
                   </th>
-                  <th class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                  <th className="text-sm font-medium text-gray-900  py-4 text-left">
                     Phone
                   </th>
-                  <th class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                  <th className="text-sm font-medium text-gray-900  py-4 text-left">
                     Followup Date
                   </th>
-                  <th class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                  <th className="text-sm font-medium text-gray-900  py-4 text-left">
                     Last note
                   </th>
-                  <th class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                  <th className="text-sm font-medium text-gray-900  py-4 text-left">
                     Assigned
                   </th>
-                  <th class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                  <th className="text-sm font-medium text-gray-900  py-4 text-left">
                     Email
                   </th>
-                  <th class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                  <th className="text-sm font-medium text-gray-900  py-4 text-left">
                     Preferred Countries
                   </th>
-                  <th class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                  <th className="text-sm font-medium text-gray-900  py-4 text-left">
                     Status
                   </th>
-                  <th class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                  <th className="text-sm font-medium text-gray-900  py-4 text-left">
                     Source
                   </th>
-                  <th class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                  <th className="text-sm font-medium text-gray-900  py-4 text-left">
                     Actions
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="border-b">
-                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    <input
-                      type="checkbox"
-                      id="A3-yes"
-                      name="A3-confirmation"
-                      value="yes"
-                    />
-                  </td>
-                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    Mark
-                  </td>
-                </tr>
+                {leads.map((lead) => (
+                  <tr className="border-b">
+                    <td className="py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      <input
+                        type="checkbox"
+                        id="A3-yes"
+                        name="A3-confirmation"
+                        value="yes"
+                      />
+                    </td>
+                    <td className="text-sm text-gray-900 font-light  py-4 whitespace-nowrap">
+                      {lead.name}
+                    </td>
+                    <td className="text-sm text-gray-900 font-light  py-4 whitespace-nowrap">
+                      {lead.phone}
+                    </td>
+                    <td className="text-sm text-gray-900 font-light  py-4 whitespace-nowrap">
+                      {lead.followup_date}
+                    </td>
+                    <td className="text-sm text-gray-900 font-light  py-4 whitespace-nowrap">
+                      {lead.last_note}
+                    </td>
+                    <td className="text-sm text-gray-900 font-light  py-4 whitespace-nowrap">
+                      {lead.assigned}
+                    </td>
+                    <td className="text-sm text-gray-900 font-light  py-4 whitespace-nowrap">
+                      {lead.email}
+                    </td>
+                    <td className="text-sm text-gray-900 font-light  py-4 whitespace-nowrap">
+                      {lead.country.name}
+                    </td>
+                    <td
+                      style={{ color: `${lead.lead_status.color}` }}
+                      className="text-sm font-light  py-4 whitespace-nowrap"
+                    >
+                      {lead.lead_status.name}
+                    </td>
+                    <td className="text-sm text-gray-900 font-light  py-4 whitespace-nowrap">
+                      {lead.source.name}
+                    </td>
+                    <td className="text-sm text-gray-900 font-light  py-4 whitespace-nowrap">
+                      {lead.assigned}
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

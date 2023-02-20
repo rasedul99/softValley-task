@@ -35,7 +35,7 @@ const StatusesDropdown = ({ selectedStatuses, setSelectedStatuses }) => {
             className=" rounded border border-gray-400 text-gray-600 py-1 w-60 pl-2 pr-10 bg-white  focus:outline-none appearance-none"
           >
             {statuses.map((status, index) => (
-              <option key={index} value={status.name}>
+              <option key={index} value={status.id}>
                 {status.name}
               </option>
             ))}

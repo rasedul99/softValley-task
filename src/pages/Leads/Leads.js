@@ -11,6 +11,7 @@ import SourcesDropdown from "../../components/SourcesDropdown";
 import StatusesDropdown from "../../components/StatusesDropdown";
 
 const Leads = () => {
+  const [leads, setLeads] = useState([]);
   const [selectedStatuses, setSelectedStatuses] = useState("statuses");
   const [selectedsources, setSelectedsources] = useState("Sources");
   const [selectedassignes, setSelectedassignes] = useState("Assignees");
@@ -35,22 +36,21 @@ const Leads = () => {
     headers: { Authorization: `Bearer ${token}` },
   };
   const handleFilter = () => {
-    console.log("clicked");
     async function getSource() {
       const result = await axios
         .post(
-          `${baseApi}api/admin/lead/list`,
+          `${baseApi}api/admin/lead/list?page=1&limit=10`,
           {
             search: "",
-            lead_status_id: [1, 2, 3],
-            source_id: [1, 2, 3],
-            user_id: [1, 2, 3],
+            lead_status_id: [],
+            source_id: [],
+            user_id: [],
             contacted_date_from: "2023-02-07T18:00:00.000Z",
             contacted_date_to: "2023-03-07T18:00:00.000Z",
           },
           config
         )
-        .then((res) => console.log(res))
+        .then((res) => setLeads(res.data.data.data))
         .catch((err) => console.log(err));
     }
     getSource();
@@ -95,7 +95,7 @@ const Leads = () => {
         </button>
       </div>
       {/* table leads */}
-      <LeadData />
+      <LeadData leads={leads} />
     </div>
   );
 };

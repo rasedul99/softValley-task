@@ -36,7 +36,7 @@ const SourcesDropdown = ({ selectedsources, setSelectedsources }) => {
             className=" rounded border border-gray-400 text-gray-600 py-1 w-60 pl-2 pr-10 bg-white  focus:outline-none appearance-none"
           >
             {sources.map((source, index) => (
-              <option key={index} value={source.name}>
+              <option key={index} value={source.id}>
                 {source.name}
               </option>
             ))}
