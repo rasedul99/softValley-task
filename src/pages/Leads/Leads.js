@@ -2,6 +2,8 @@ import React from "react";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineFullscreen } from "react-icons/md";
 import AssignessDropdown from "../../components/AssignessDropdown";
+import ContactedDate from "../../components/ContactedDate";
+import LeadData from "../../components/LeadData";
 import SearchBar from "../../components/SearchBar";
 import SourcesDropdown from "../../components/SourcesDropdown";
 import StatusesDropdown from "../../components/StatusesDropdown";
@@ -19,14 +21,14 @@ const Leads = () => {
           <CgProfile size="20" />
         </div>
       </div>
-
       <div className="bg-slate-100 p-2 my-2">
         <SearchBar />
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-2 items-center relative">
         <StatusesDropdown />
         <SourcesDropdown />
         <AssignessDropdown />
+        <ContactedDate />
         <button className="bg-slate-500 text-white  px-10 rounded">
           Filter
         </button>
@@ -34,6 +36,8 @@ const Leads = () => {
           Reset Filter
         </button>
       </div>
+      Table data
+      <LeadData />
     </div>
   );
 };
