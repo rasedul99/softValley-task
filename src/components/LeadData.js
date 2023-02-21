@@ -54,7 +54,7 @@ const LeadData = ({ leads }) => {
                 </tr>
               </thead>
               <tbody>
-                {leads.map((lead) => (
+                {leads?.map((lead) => (
                   <tr className="border-b">
                     <td className="py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                       <input

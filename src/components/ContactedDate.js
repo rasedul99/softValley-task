@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import DateModal from "./DateModal";
 
-const ContactedDate = ({ date, setDate }) => {
+const ContactedDate = ({ date, setDate, contactedDate }) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <div>
@@ -10,8 +10,9 @@ const ContactedDate = ({ date, setDate }) => {
         <input
           placeholder="Contacted Date"
           className=" text-gray-600 bg-white focus:outline-none appearance-none"
+          value={contactedDate}
         />
-        <button onClick={() => setShowModal(!showModal)} className="">
+        <button onClick={() => setShowModal(!showModal)}>
           <FaRegCalendarAlt />
         </button>
       </div>
